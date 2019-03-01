@@ -1,0 +1,43 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage2.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <div id="myfavorites">
+    <h3>My Saved Items</h3>
+    <asp:CheckBox ID="chkshow" runat="server" Text ="Show Saved Items" /><br />
+    <asp:CheckBox ID="chkall" runat="server" Text ="Show All Items" /><br />
+    <asp:Repeater ID="Repeater1" runat="server" onitemcommand="Repeater1_ItemCommand"> 
+        <ItemTemplate>        
+        <asp:HyperLink ID="HyperLink1" runat="server" Text='<%# Bind("Title") %>' NavigateUrl='<%# Bind("Link") %>'>
+        </asp:HyperLink><br />
+        <asp:Label ID="Label4" runat="server" Text='<%# Bind("Body") %>'></asp:Label><br />
+        <asp:TextBox ID="txtcomments" runat="server" Visible ="false"></asp:TextBox><br />
+        <asp:ImageButton ID="btnedit" ImageUrl ="~/pencil.png" runat="server" CommandName ="editComments" />
+        <asp:Button ID="btnupdate" runat="server" Text="Update" CommandName ="updateComments" Visible ="false"  />
+        <hr />
+        </ItemTemplate>   
+    </asp:Repeater>
+    </div>
+
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns ="false"  
+            Width ="100%" onrowediting="GridView1_RowEditing" 
+            onrowupdated="GridView1_RowUpdated" onrowupdating="GridView1_RowUpdating">        
+        <Columns>
+        <asp:TemplateField HeaderText ="Saved Favourites">
+        <ItemTemplate>
+        <asp:HyperLink ID="HyperLink1" runat="server" Text='<%# Bind("Title") %>' NavigateUrl='<%# Bind("Link") %>'></asp:HyperLink><br />
+        <asp:Label ID="Label4" runat="server" Text='<%# Bind("Body") %>'></asp:Label>
+        <hr />
+        </ItemTemplate>
+        <EditItemTemplate>
+        <asp:HyperLink ID="HyperLink1" runat="server" Text='<%# Bind("Title") %>' NavigateUrl='<%# Bind("Link") %>'></asp:HyperLink><br />
+        <asp:Label ID="Label4" runat="server" Text='<%# Bind("Body") %>'></asp:Label><br />
+        <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Body") %>'></asp:TextBox>
+        </EditItemTemplate>
+        </asp:TemplateField>  
+        <asp:CommandField ButtonType ="Image" ShowEditButton ="true" EditImageUrl ="~/pencil.png" />      
+        </Columns>
+        </asp:GridView>
+</asp:Content>
+
