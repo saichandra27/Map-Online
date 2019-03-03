@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage2.master.cs" Inherits="MasterPage2" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id = "Header" style ="background-color:Black; height:40px;"> 
+               <table>
+               <tr>
+               <td>
+               <asp:HyperLink ID="HyperLink1" NavigateUrl="~/Home.aspx" ForeColor ="Gray"  Font-Underline="false" Font-Bold ="true"  Font-Size="Large" runat="server">Home</asp:HyperLink>
+               </td>
+               <td>
+               <asp:LoginName ID="LoginName1" runat="server" Font-Underline="false" ForeColor ="White" Font-Bold ="true" Font-Size="Large" />
+               </td>
+               <td>
+               <asp:LoginStatus ID="LoginStatus1" runat="server" ForeColor ="Gray" Font-Underline="false"
+                   Font-Bold ="true" Font-Size="Large"  LoginText="" />
+               </td>
+               <td>
+               <asp:HyperLink ID="HyperLink3" NavigateUrl="~/Registration.aspx" ForeColor ="Gray"  Font-Underline="false" Font-Bold ="true"  Font-Size="Large" runat="server">Register</asp:HyperLink>                
+               </td>
+               <td>
+               <asp:HyperLink ID="HyperLink2" NavigateUrl="~/Admin/Admin.aspx" ForeColor ="Gray"  Font-Underline="false" Font-Bold ="true"  Font-Size="Large" runat="server">Admin</asp:HyperLink>               
+               </td> 
+               <td>
+               <asp:HyperLink ID="HyperLink4" NavigateUrl="~/MyProfile.aspx" ForeColor ="Gray"  Font-Underline="false" Font-Bold ="true"  Font-Size="Large" runat="server">MyProfile</asp:HyperLink>               
+               </td>  
+               <td>
+               <asp:HyperLink ID="HyperLink5" NavigateUrl="~/Admin/AddAProperty.aspx" ForeColor ="Gray"  Font-Underline="false" Font-Bold ="true"  Font-Size="Large" runat="server">Add A Property</asp:HyperLink>               
+               </td>         
+               </tr>
+               </table>    
+          </div>
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
