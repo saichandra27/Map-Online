@@ -19,6 +19,7 @@ public partial class Admin_AddAProperty : System.Web.UI.Page
     }
     protected void btncreate_Click(object sender, EventArgs e)
     {
-      string varforcommitingcodeusinggitsampel="this is learning git command line.";
+        string varforcommitingcodeusinggitsampel = "this is learning git command line.";
+        string var2 = varforcommitingcodeusinggitsampel + "new variable";
     }
 }
