@@ -21,5 +21,6 @@ public partial class Admin_AddAProperty : System.Web.UI.Page
     {
         string varforcommitingcodeusinggitsampel = "this is learning git command line.";
         string var2 = varforcommitingcodeusinggitsampel + "new variable";
+        string var3 = var2 + "test";
     }
 }
